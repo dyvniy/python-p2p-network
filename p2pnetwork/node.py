@@ -3,6 +3,7 @@ import time
 import threading
 import random
 import hashlib
+import copy
 
 from p2pnetwork.nodeconnection import NodeConnection
 
@@ -291,6 +292,10 @@ class Node(threading.Thread):
             time.sleep(0.01)
 
         print("Node stopping...")
+        
+        nodes_inbound = copy.copy(self.nodes_inbound)
+        nodes_outbound = copy.copy(self.nodes_outbound)
+
         for t in self.nodes_inbound:
             t.stop()
 
@@ -299,10 +304,10 @@ class Node(threading.Thread):
 
         time.sleep(1)
 
-        for t in self.nodes_inbound:
+        for t in nodes_inbound:
             t.join()
 
-        for t in self.nodes_outbound:
+        for t in nodes_outbound:
             t.join()
 
         self.sock.settimeout(None)   

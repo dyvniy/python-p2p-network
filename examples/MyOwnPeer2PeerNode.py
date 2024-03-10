@@ -10,7 +10,7 @@ from p2pnetwork.node import Node
 class MyOwnPeer2PeerNode (Node):
 
     # Python class constructor
-    def __init__(self, host, port, id=None, callback=None, max_connections=0):
+    def __init__(self, host, port, id=None, callback=None, max_connections=10):
         super(MyOwnPeer2PeerNode, self).__init__(host, port, id, callback, max_connections)
         print("MyPeer2PeerNode: Started")
 
