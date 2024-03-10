@@ -13,4 +13,4 @@ __main__ = "p2pnetwork"
 __all__ = ["node", "Node", "nodeconnection", "NodeConnection"]
 
 from .node import Node
-from .nodeconection import NodeConnection
+from .nodeconnection import NodeConnection
