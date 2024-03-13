@@ -13,9 +13,11 @@ sys.path.insert(0, '..') # Import the files where the modules are located
 
 from CaseOwnPeer2PeerNode import CaseOwnPeer2PeerNode
 
-node_1 = CaseOwnPeer2PeerNode("127.0.0.1", 8001, 'first_1')
-node_2 = CaseOwnPeer2PeerNode("127.0.0.1", 8002, 'secnd_2')
-node_3 = CaseOwnPeer2PeerNode("192.168.88.193", 8003, 'third_3')
+# local
+node_1 = CaseOwnPeer2PeerNode("127.0.0.1", 8001, 'first_1w')
+node_2 = CaseOwnPeer2PeerNode("127.0.0.1", 8002, 'secnd_2w')
+# for Linux remote, random ID
+node_3 = CaseOwnPeer2PeerNode("0.0.0.0", 8889)
 
 time.sleep(1)
 
@@ -32,7 +34,7 @@ node_3.debug = debug
 
 
 node_1.connect_with_node('127.0.0.1', 8002)
-node_2.connect_with_node('192.168.88.193', 8003)
+node_2.connect_with_node('0.0.0.0', 8003)
 node_3.connect_with_node('127.0.0.1', 8001)
 
 time.sleep(2)
