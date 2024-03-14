@@ -29,7 +29,8 @@ class NodeConnection(threading.Thread):
         port: The port of the server of the main node."""
 
     def __init__(self, main_node, sock, id, host, port):
-        """Instantiates a new NodeConnection. Do not forget to start the thread. All TCP/IP communication is handled by this connection.
+        """Instantiates a new NodeConnection. Do not forget to start the thread. 
+            All TCP/IP communication is handled by this connection.
             main_node: The Node class that received a connection.
             sock: The socket that is assiociated with the client connection.
             id: The id of the connected node (at the other side of the TCP/IP connection).

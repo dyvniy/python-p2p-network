@@ -47,8 +47,11 @@ class CaseOwnPeer2PeerNode(MyOwnPeer2PeerNode):
     def node_message(self, node, data):
         super(CaseOwnPeer2PeerNode, self).node_message(node, data)
         # self.id + " - " + node.id + ": " + str(data)
-        if 'list' in data:
-            self.send_list(data['list'])
+        if isinstance(data, str):
+            return
+        if isinstance(data, dict):
+            if 'list' in data:
+                self.send_list(data['list'])
 
     def send_list(self, params):
         print('- send list ' + str(params))
